@@ -3,6 +3,10 @@
 #### 基于SimpleWallet协议的iOS SDK
 #### 支持公链 ETH,EOS,EOSFORCE 等
 
+[English Readme](https://github.com/MediShares/MathWalletSDK-iOS/blob/master/README_EN.md)
+
+[Korean Readme](https://github.com/MediShares/MathWalletSDK-iOS/blob/master/README_KO.md)
+
 
 ## 如何使用？
 
