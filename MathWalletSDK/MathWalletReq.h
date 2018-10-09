@@ -57,3 +57,17 @@
 @property (nonatomic, copy) NSNumber *expired;                  // 交易过期时间，unix时间戳
 
 @end
+
+#pragma mark - 自定义Trasaction
+/*!
+ * @class MathWalletTransactionReq
+ * @brief 自定义Trasaction数据
+ */
+@interface MathWalletTransactionReq : MathWalletReq
+
+@property (nonatomic, copy) NSString *from;                     // 付款人的账户或地址
+@property (nonatomic, copy) NSArray<NSDictionary *> *actions;              // 交易结构 [{"code": "eosio.token","action": "transfer","binargs":"00000"}]
+@property (nonatomic, copy) NSString *desc;                     // 交易的说明信息，钱包在付款UI展示给用户，最长不要超过128个字节
+@property (nonatomic, copy) NSNumber *expired;                  // 交易过期时间，unix时间戳
+
+@end
