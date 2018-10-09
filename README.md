@@ -85,4 +85,26 @@
   
   [MathWalletAPI sendReq:transferReq];
 ```
- 
+ ### 5、使用MathWallet进行自定义交易操作（执行合约）
+
+```Objective C
+  MathWalletTransactionReq *transactionReq = [[MathWalletTransactionReq alloc] init];
+  // 公链标识
+  transactionReq.blockchain = @"eosio";
+  // DApp信息
+  transactionReq.dappIcon = @"http://www.mathwallet.org/images/download/wallet_cn.png";
+  transactionReq.dappName = @"Demos";
+  // 转账信息
+  transactionReq.from = @"testaccount1";
+  transactionReq.actions = @[
+                          @{
+                              @"code":@"eosio.token",
+                              @"action":@"transfer",
+                              @"binargs":@"4086089a7ad7bef6c0a6eb6c1acda891010000000000000004454f530000000006e5a487e6b3a8"
+                              }
+                          ];
+
+  transactionReq.desc = @"这是展示在钱包中的描述";
+  transactionReq.expired = [NSNumber numberWithLong:[NSDate date].timeIntervalSince1970];
+  [MathWalletAPI sendReq:transactionReq];
+```
