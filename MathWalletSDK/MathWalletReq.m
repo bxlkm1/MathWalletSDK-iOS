@@ -74,22 +74,3 @@
     return params.copy;
 }
 @end
-
-@implementation MathWalletTransactionReq
--(instancetype)init{
-    self = [super init];
-    if (self) {
-        self.action = @"transaction";
-    }
-    return self;
-}
-
--(NSDictionary *)toParams{
-    NSMutableDictionary *params = [super toParams].mutableCopy;
-    params[@"from"] = self.from;
-    params[@"actions"] = self.actions;
-    params[@"desc"] = self.desc;
-    params[@"expired"] = self.expired;
-    return params.copy;
-}
-@end
