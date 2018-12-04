@@ -7,34 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A8234E0221B64CA900E96FD4 /* MathWalletAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = A8234DFD21B64CA900E96FD4 /* MathWalletAPI.m */; };
+		A8234E0321B64CA900E96FD4 /* MathWalletResp.m in Sources */ = {isa = PBXBuildFile; fileRef = A8234DFF21B64CA900E96FD4 /* MathWalletResp.m */; };
+		A8234E0421B64CA900E96FD4 /* MathWalletReq.m in Sources */ = {isa = PBXBuildFile; fileRef = A8234E0121B64CA900E96FD4 /* MathWalletReq.m */; };
+		A8234E0921B64D8D00E96FD4 /* BlockchainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8234E0821B64D8D00E96FD4 /* BlockchainTableViewController.m */; };
 		A8FEA8E7215B874F00BB0729 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A8FEA8E6215B874F00BB0729 /* AppDelegate.m */; };
-		A8FEA8EA215B874F00BB0729 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8FEA8E9215B874F00BB0729 /* ViewController.m */; };
 		A8FEA8ED215B874F00BB0729 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8FEA8EB215B874F00BB0729 /* Main.storyboard */; };
 		A8FEA8EF215B875100BB0729 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8FEA8EE215B875100BB0729 /* Assets.xcassets */; };
 		A8FEA8F2215B875100BB0729 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8FEA8F0215B875100BB0729 /* LaunchScreen.storyboard */; };
 		A8FEA8F5215B875100BB0729 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A8FEA8F4215B875100BB0729 /* main.m */; };
-		A8FEA904215B875B00BB0729 /* MathWalletAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = A8FEA8FD215B875B00BB0729 /* MathWalletAPI.m */; };
-		A8FEA905215B875B00BB0729 /* MathWalletResp.m in Sources */ = {isa = PBXBuildFile; fileRef = A8FEA8FF215B875B00BB0729 /* MathWalletResp.m */; };
-		A8FEA906215B875B00BB0729 /* MathWalletReq.m in Sources */ = {isa = PBXBuildFile; fileRef = A8FEA902215B875B00BB0729 /* MathWalletReq.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A8234DFC21B64CA900E96FD4 /* MathWalletResp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathWalletResp.h; sourceTree = "<group>"; };
+		A8234DFD21B64CA900E96FD4 /* MathWalletAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathWalletAPI.m; sourceTree = "<group>"; };
+		A8234DFE21B64CA900E96FD4 /* MathWalletReq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathWalletReq.h; sourceTree = "<group>"; };
+		A8234DFF21B64CA900E96FD4 /* MathWalletResp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathWalletResp.m; sourceTree = "<group>"; };
+		A8234E0021B64CA900E96FD4 /* MathWalletAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathWalletAPI.h; sourceTree = "<group>"; };
+		A8234E0121B64CA900E96FD4 /* MathWalletReq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathWalletReq.m; sourceTree = "<group>"; };
+		A8234E0721B64D8D00E96FD4 /* BlockchainTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlockchainTableViewController.h; sourceTree = "<group>"; };
+		A8234E0821B64D8D00E96FD4 /* BlockchainTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlockchainTableViewController.m; sourceTree = "<group>"; };
 		A8FEA8E2215B874F00BB0729 /* MathWalletDemos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MathWalletDemos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8FEA8E5215B874F00BB0729 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A8FEA8E6215B874F00BB0729 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A8FEA8E8215B874F00BB0729 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A8FEA8E9215B874F00BB0729 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A8FEA8EC215B874F00BB0729 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A8FEA8EE215B875100BB0729 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A8FEA8F1215B875100BB0729 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A8FEA8F3215B875100BB0729 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A8FEA8F4215B875100BB0729 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		A8FEA8FC215B875B00BB0729 /* MathWalletResp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathWalletResp.h; sourceTree = "<group>"; };
-		A8FEA8FD215B875B00BB0729 /* MathWalletAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathWalletAPI.m; sourceTree = "<group>"; };
-		A8FEA8FE215B875B00BB0729 /* MathWalletReq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathWalletReq.h; sourceTree = "<group>"; };
-		A8FEA8FF215B875B00BB0729 /* MathWalletResp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathWalletResp.m; sourceTree = "<group>"; };
-		A8FEA900215B875B00BB0729 /* MathWalletAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathWalletAPI.h; sourceTree = "<group>"; };
-		A8FEA902215B875B00BB0729 /* MathWalletReq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathWalletReq.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +48,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A8234DFB21B64CA900E96FD4 /* MathWalletSDK */ = {
+			isa = PBXGroup;
+			children = (
+				A8234E0021B64CA900E96FD4 /* MathWalletAPI.h */,
+				A8234DFD21B64CA900E96FD4 /* MathWalletAPI.m */,
+				A8234DFE21B64CA900E96FD4 /* MathWalletReq.h */,
+				A8234E0121B64CA900E96FD4 /* MathWalletReq.m */,
+				A8234DFC21B64CA900E96FD4 /* MathWalletResp.h */,
+				A8234DFF21B64CA900E96FD4 /* MathWalletResp.m */,
+			);
+			path = MathWalletSDK;
+			sourceTree = SOURCE_ROOT;
+		};
+		A8234E0521B64D4300E96FD4 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A8234E0721B64D8D00E96FD4 /* BlockchainTableViewController.h */,
+				A8234E0821B64D8D00E96FD4 /* BlockchainTableViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		A8FEA8D9215B874F00BB0729 = {
 			isa = PBXGroup;
 			children = (
@@ -67,11 +89,10 @@
 		A8FEA8E4215B874F00BB0729 /* MathWalletDemos */ = {
 			isa = PBXGroup;
 			children = (
-				A8FEA8FB215B875B00BB0729 /* MathWalletSDK */,
+				A8234DFB21B64CA900E96FD4 /* MathWalletSDK */,
+				A8234E0521B64D4300E96FD4 /* ViewControllers */,
 				A8FEA8E5215B874F00BB0729 /* AppDelegate.h */,
 				A8FEA8E6215B874F00BB0729 /* AppDelegate.m */,
-				A8FEA8E8215B874F00BB0729 /* ViewController.h */,
-				A8FEA8E9215B874F00BB0729 /* ViewController.m */,
 				A8FEA8EB215B874F00BB0729 /* Main.storyboard */,
 				A8FEA8EE215B875100BB0729 /* Assets.xcassets */,
 				A8FEA8F0215B875100BB0729 /* LaunchScreen.storyboard */,
@@ -79,20 +100,6 @@
 				A8FEA8F4215B875100BB0729 /* main.m */,
 			);
 			path = MathWalletDemos;
-			sourceTree = "<group>";
-		};
-		A8FEA8FB215B875B00BB0729 /* MathWalletSDK */ = {
-			isa = PBXGroup;
-			children = (
-				A8FEA8FC215B875B00BB0729 /* MathWalletResp.h */,
-				A8FEA8FF215B875B00BB0729 /* MathWalletResp.m */,
-				A8FEA8FE215B875B00BB0729 /* MathWalletReq.h */,
-				A8FEA902215B875B00BB0729 /* MathWalletReq.m */,
-				A8FEA900215B875B00BB0729 /* MathWalletAPI.h */,
-				A8FEA8FD215B875B00BB0729 /* MathWalletAPI.m */,
-			);
-			name = MathWalletSDK;
-			path = ../../MathWalletSDK/MathWalletSDK;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,12 +172,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A8FEA905215B875B00BB0729 /* MathWalletResp.m in Sources */,
-				A8FEA8EA215B874F00BB0729 /* ViewController.m in Sources */,
+				A8234E0921B64D8D00E96FD4 /* BlockchainTableViewController.m in Sources */,
+				A8234E0321B64CA900E96FD4 /* MathWalletResp.m in Sources */,
 				A8FEA8F5215B875100BB0729 /* main.m in Sources */,
-				A8FEA906215B875B00BB0729 /* MathWalletReq.m in Sources */,
+				A8234E0421B64CA900E96FD4 /* MathWalletReq.m in Sources */,
 				A8FEA8E7215B874F00BB0729 /* AppDelegate.m in Sources */,
-				A8FEA904215B875B00BB0729 /* MathWalletAPI.m in Sources */,
+				A8234E0221B64CA900E96FD4 /* MathWalletAPI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
