@@ -99,6 +99,26 @@
 }
 @end
 
+@implementation MathWalletSignMessageReq : MathWalletReq
+
+-(instancetype)init{
+    self = [super init];
+    if (self) {
+        self.action = @"signMessage";
+    }
+    return self;
+}
+
+-(NSDictionary *)toParams{
+    NSMutableDictionary *params = [super toParams].mutableCopy;
+    params[@"from"] = self.from;
+    params[@"message"] = self.message;
+    params[@"isHex"] = self.isHex;
+    params[@"desc"] = self.desc;
+    return params.copy;
+}
+@end
+
 @implementation MathWalletOpenURLReq : MathWalletReq
 
 -(instancetype)init{

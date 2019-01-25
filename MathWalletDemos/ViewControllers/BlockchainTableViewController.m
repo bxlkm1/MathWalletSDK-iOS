@@ -32,7 +32,7 @@
         case 0:             // Ethereum
             return 3;
         case 1:             // EOSIO
-            return 4;
+            return 5;
         case 2:             // EOSForce
             return 4;
         case 3:             // TRON
@@ -70,6 +70,9 @@
                     [self eosio_transfer];
                     break;
                 case 2:
+                    [self eosio_signMessage];
+                    break;
+                case 3:
                     [self eosio_custom_transaction];
                     break;
                 default:
@@ -174,10 +177,25 @@
     // DApp信息
     openURLReq.dappIcon = @"http://www.mathwallet.org/images/download/wallet_cn.png";
     openURLReq.dappName = @"MathWalletSDK-Demos";
-    // 转账信息
+    // 链接信息
     openURLReq.dappUrl = @"http://www.mathwallet.org/cn/";
     openURLReq.desc = @"这是展示在钱包中的描述";
     [MathWalletAPI sendReq:openURLReq];
+}
+-(void)eosio_signMessage{
+    MathWalletSignMessageReq *signMessageReq = [[MathWalletSignMessageReq alloc] init];
+    // 公链标识
+    signMessageReq.blockchain = @"eosio";
+    // DApp信息
+    signMessageReq.dappIcon = @"http://www.mathwallet.org/images/download/wallet_cn.png";
+    signMessageReq.dappName = @"MathWalletSDK-Demos";
+    // 签名信息
+    signMessageReq.from = @"testaccount1";
+    signMessageReq.message = @"我是要签名的信息";
+    signMessageReq.isHex = @(NO);
+    signMessageReq.desc = @"这是展示在钱包中的描述";
+    
+    [MathWalletAPI sendReq:signMessageReq];
 }
 -(void)eosio_login{
     MathWalletLoginReq *loginReq = [[MathWalletLoginReq alloc] init];
@@ -191,7 +209,6 @@
     loginReq.loginUrl = @"";
     loginReq.expired = [NSNumber numberWithLong:[NSDate date].timeIntervalSince1970+60];
     loginReq.loginMemo = @"Memo";
-    
     
     [MathWalletAPI sendReq:loginReq];
 }
@@ -220,15 +237,15 @@
     // 公链标识
     transactionReq.blockchain = @"eosio";
     // DApp信息
-    transactionReq.dappIcon = @"http://www.mathwallet.org/images/download/wallet_cn.png";
-    transactionReq.dappName = @"MathWalletSDK-Demos";
+    transactionReq.dappIcon = @"https://www.btex.org/btex_website/static/btex.png";
+    transactionReq.dappName = @"BTEX";
     // 转账信息
     transactionReq.from = @"yuzhiyou1234";
     transactionReq.actions = @[
                                @{
-                                   @"code":@"eosio.token",
-                                   @"action":@"transfer",
-                                   @"binargs":@"4086089a7ad7bef6104250d2306c98d9a00f00000000000004454f530000000012302d322d2d31353433383439393239313636"
+                                   @"code":@"eosbtexbonus",
+                                   @"action":@"redeembt",
+                                   @"binargs":@"200a9ba67d5fab69030000000000000060070b01000000000442540000000000"
                                    }
                                ];
     
