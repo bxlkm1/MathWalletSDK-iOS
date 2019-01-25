@@ -108,7 +108,24 @@
   transactionReq.expired = [NSNumber numberWithLong:[NSDate date].timeIntervalSince1970];
   [MathWalletAPI sendReq:transactionReq];
 ```
- ### 6、使用MathWallet 打开DApp
+ ### 6、使用MathWallet 签名消息
+
+```Objective C
+    MathWalletSignMessageReq *signMessageReq = [[MathWalletSignMessageReq alloc] init];
+    // 公链标识
+    signMessageReq.blockchain = @"eosio";
+    // DApp信息
+    signMessageReq.dappIcon = @"http://www.mathwallet.org/images/download/wallet_cn.png";
+    signMessageReq.dappName = @"MathWalletSDK-Demos";
+    // 签名信息
+    signMessageReq.from = @"testaccount1";
+    signMessageReq.message = @"我是要签名的信息";
+    signMessageReq.isHex = @(NO);
+    signMessageReq.desc = @"这是展示在钱包中的描述";
+    
+    [MathWalletAPI sendReq:signMessageReq];
+```
+ ### 7、使用MathWallet 打开DApp
 
 ```Objective C
     MathWalletOpenURLReq *openURLReq = [[MathWalletOpenURLReq alloc] init];
