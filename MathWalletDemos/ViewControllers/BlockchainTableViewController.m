@@ -156,7 +156,6 @@
     transferReq.dappIcon = @"http://www.mathwallet.org/images/download/wallet_cn.png";
     transferReq.dappName = @"MathWalletSDK-Demos";
     // 转账信息
-    transferReq.from = @"0xEF3E0B3744Dfb8099c2a800211b7e19B8459a218";
     transferReq.to = @"0xace753d27a7c73253c6c05e7b1c3716171f02745";
     transferReq.amount = @"0";
     transferReq.precision = @(18);
