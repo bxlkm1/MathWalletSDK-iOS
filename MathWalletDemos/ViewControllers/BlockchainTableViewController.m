@@ -190,7 +190,6 @@
     signMessageReq.dappIcon = @"http://www.mathwallet.org/images/download/wallet_cn.png";
     signMessageReq.dappName = @"MathWalletSDK-Demos";
     // 签名信息
-    signMessageReq.from = @"testaccount1";
     signMessageReq.message = @"我是要签名的信息";
     signMessageReq.isHex = @(NO);
     signMessageReq.desc = @"这是展示在钱包中的描述";
@@ -222,7 +221,7 @@
     // 转账信息
     transferReq.from = @"yuzhiyou1234";
     transferReq.to = @"testaccount2";
-    transferReq.amount = @"1.0000";
+    transferReq.amount = @"0.2500";
     transferReq.precision = @(4);
     transferReq.symbol = @"EOS";
     transferReq.contract = @"eosio.token";
