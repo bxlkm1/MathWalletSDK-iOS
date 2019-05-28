@@ -112,7 +112,7 @@
 -(NSDictionary *)toParams{
     NSMutableDictionary *params = [super toParams].mutableCopy;
     params[@"message"] = self.message;
-    params[@"isHex"] = self.isHex;
+    params[@"isHash"] = self.isHash;
     params[@"desc"] = self.desc;
     return params.copy;
 }

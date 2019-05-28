@@ -140,7 +140,7 @@
     loginReq.dappIcon = @"http://www.mathwallet.org/images/download/wallet_cn.png";
     loginReq.dappName = @"MathWalletSDK-Demos";
     // DApp Server
-    loginReq.uuID = @"ios-D079184AACD246CE82FC66FEB63A5999";
+    loginReq.uuID = @"D079184AACD246CE82FC66FEB63A5999";
     loginReq.loginUrl = @"";
     loginReq.expired = [NSNumber numberWithLong:[NSDate date].timeIntervalSince1970+60];
     loginReq.loginMemo = @"Memo";
@@ -190,7 +190,7 @@
     signMessageReq.dappName = @"MathWalletSDK-Demos";
     // 签名信息
     signMessageReq.message = @"我是要签名的信息";
-    signMessageReq.isHex = @(NO);
+    signMessageReq.isHash = @(NO);
     signMessageReq.desc = @"这是展示在钱包中的描述";
     
     [MathWalletAPI sendReq:signMessageReq];

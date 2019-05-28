@@ -81,7 +81,7 @@
 @interface MathWalletSignMessageReq : MathWalletReq
 
 @property (nonatomic, copy) NSString *message;                  // 要签名的消息
-@property (nonatomic, copy) NSNumber *isHex;                    // 是否是十六进制数据
+@property (nonatomic, copy) NSNumber *isHash;                    // sha256 hash
 @property (nonatomic, copy) NSString *desc;                     // 签名的说明信息，钱包在签名时展示给用户，最长不要超过128个字节
 
 @end
