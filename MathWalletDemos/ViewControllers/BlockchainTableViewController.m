@@ -358,14 +358,14 @@
     transactionReq.dappIcon = @"http://www.mathwallet.org/images/download/wallet_cn.png";
     transactionReq.dappName = @"MathWalletSDK-Demos";
     // 转账信息
-    transactionReq.from = @"TWXNtL6rHGyk2xeVR3QqEN9QGKfgyRTeU2";
+    transactionReq.from = @"";
     /*
     transactionReq.contract = @[@{
                                     @"parameter": @{
                                         @"value": @{
                                             @"data": @"7365870b0000000000000000000000000000000000000000000000000000000000000060",
-                                            @"owner_address": @"414c9727e700492d637aa763d780d82787a48096cb",
-                                            @"contract_address": @"41e19c9914380de8eb9df99b9e6965bd5bf75f2c66",
+                                            @"owner_address": @"TAyzPC7CGD49f3zYzeaTXgfKJENwcfBxTL",
+                                            @"contract_address": @"TLPs73VZBWgB2LcVXjH1ywRuVcLZK4bLjP",
                                             @"call_value": @(10000000)
                                         },
                                         @"type_url": @"type.googleapis.com/protocol.TriggerSmartContract"
@@ -377,8 +377,8 @@
                                     @"parameter": @{
                                             @"value": @{
                                                     @"amount": @(1),
-                                                    @"owner_address": @"TWXNtL6rHGyk2xeVR3QqEN9QGKfgyRTeU2",
-                                                    @"to_address": @"TMFPEuLf26UcJNwD4PNUhSvDhdF8wgAprj"
+                                                    @"owner_address": @"TAyzPC7CGD49f3zYzeaTXgfKJENwcfBxTL",
+                                                    @"to_address": @"TLPs73VZBWgB2LcVXjH1ywRuVcLZK4bLjP"
                                                     },
                                             @"type_url": @"type.googleapis.com/protocol.TransferContract"
                                             },
