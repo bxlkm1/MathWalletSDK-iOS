@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "MathWalletAPI.h"
+#import "TronUtils.h"
 
 @interface AppDelegate ()
 
@@ -19,6 +20,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [MathWalletAPI registerAppURLSchemes:@"mathwalletdemos"];
+    
+    
+    // Test
+    NSLog(@"%@",[TronUtils decodeAddress:@"TWXNtL6rHGyk2xeVR3QqEN9QGKfgyRTeU2"]);
+    NSLog(@"%@",[TronUtils encodeAddress:@"41e17813c29a72d0f706d3d1bdf47d5b8181e3fb67"]);
     return YES;
 }
 
