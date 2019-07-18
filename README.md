@@ -120,7 +120,7 @@
     // 签名信息
     signMessageReq.from = @"testaccount1";
     signMessageReq.message = @"我是要签名的信息";
-    signMessageReq.isHex = @(NO);
+    signMessageReq.isHash = @(NO);
     signMessageReq.desc = @"这是展示在钱包中的描述";
     
     [MathWalletAPI sendReq:signMessageReq];
