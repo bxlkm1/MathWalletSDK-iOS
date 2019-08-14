@@ -36,7 +36,7 @@
         case 2:             // EOSForce
             return 4;
         case 3:             // TRON
-            return 3;
+            return 4;
         default:
             return 0;
     }
@@ -107,9 +107,11 @@
                 case 1:
                     [self tron_custom_transaction];
                     break;
-                    
-                default:
+                case 2:
                     [self tron_openURL];
+                    break;
+                default:
+                    [self tron_signMessage];
                     break;
             }
             break;
@@ -130,7 +132,9 @@
     // 转账信息
     openURLReq.dappUrl = @"http://www.mathwallet.org/cn/";
     openURLReq.desc = @"这是展示在钱包中的描述";
-    [MathWalletAPI sendReq:openURLReq];
+    [MathWalletAPI sendReq:openURLReq response:^(MathWalletResp *resq) {
+        NSLog(@"%@",resq.data);
+    }];
 }
 -(void)ethereum_login{
     MathWalletLoginReq *loginReq = [[MathWalletLoginReq alloc] init];
@@ -146,7 +150,9 @@
     loginReq.loginMemo = @"Memo";
     
     
-    [MathWalletAPI sendReq:loginReq];
+    [MathWalletAPI sendReq:loginReq response:^(MathWalletResp *resq) {
+        NSLog(@"%@",resq.data);
+    }];
 }
 -(void)ethereum_transfer{
     MathWalletTransferReq *transferReq = [[MathWalletTransferReq alloc] init];
@@ -165,7 +171,9 @@
     
     transferReq.desc = @"这是展示在钱包中的描述";
     transferReq.expired = [NSNumber numberWithLong:[NSDate date].timeIntervalSince1970+60];
-    [MathWalletAPI sendReq:transferReq];
+    [MathWalletAPI sendReq:transferReq response:^(MathWalletResp *resq) {
+        NSLog(@"%@",resq.data);
+    }];
 }
 
 #pragma mark -  EOSIO
@@ -179,7 +187,9 @@
     // 链接信息
     openURLReq.dappUrl = @"http://www.mathwallet.org/cn/";
     openURLReq.desc = @"这是展示在钱包中的描述";
-    [MathWalletAPI sendReq:openURLReq];
+    [MathWalletAPI sendReq:openURLReq response:^(MathWalletResp *resq) {
+        NSLog(@"%@",resq.data);
+    }];
 }
 -(void)eosio_signMessage{
     MathWalletSignMessageReq *signMessageReq = [[MathWalletSignMessageReq alloc] init];
@@ -193,7 +203,9 @@
     signMessageReq.isHash = @(NO);
     signMessageReq.desc = @"这是展示在钱包中的描述";
     
-    [MathWalletAPI sendReq:signMessageReq];
+    [MathWalletAPI sendReq:signMessageReq response:^(MathWalletResp *resq) {
+        NSLog(@"%@",resq.data);
+    }];
 }
 -(void)eosio_login{
     MathWalletLoginReq *loginReq = [[MathWalletLoginReq alloc] init];
@@ -208,7 +220,7 @@
     loginReq.expired = [NSNumber numberWithLong:[NSDate date].timeIntervalSince1970+60];
     loginReq.loginMemo = @"Memo";
     
-    [MathWalletAPI sendReq:loginReq];
+    [MathWalletAPI sendReq:loginReq response:nil];
 }
 -(void)eosio_transfer{
     MathWalletTransferReq *transferReq = [[MathWalletTransferReq alloc] init];
@@ -228,7 +240,9 @@
     
     transferReq.desc = @"这是展示在钱包中的描述";
     transferReq.expired = [NSNumber numberWithLong:[NSDate date].timeIntervalSince1970+60];
-    [MathWalletAPI sendReq:transferReq];
+    [MathWalletAPI sendReq:transferReq response:^(MathWalletResp *resq) {
+        NSLog(@"%@",resq.data);
+    }];
 }
 -(void)eosio_custom_transaction{
     MathWalletTransactionReq *transactionReq = [[MathWalletTransactionReq alloc] init];
@@ -249,7 +263,9 @@
     
     transactionReq.desc = @"这是展示在钱包中的描述";
     transactionReq.expired = [NSNumber numberWithLong:[NSDate date].timeIntervalSince1970+60];
-    [MathWalletAPI sendReq:transactionReq];
+    [MathWalletAPI sendReq:transactionReq response:^(MathWalletResp *resq) {
+        NSLog(@"%@",resq.data);
+    }];
 }
 #pragma mark -  EOSForce
 -(void)eosforce_openURL{
@@ -262,7 +278,9 @@
     // 转账信息
     openURLReq.dappUrl = @"http://www.mathwallet.org/cn/";
     openURLReq.desc = @"这是展示在钱包中的描述";
-    [MathWalletAPI sendReq:openURLReq];
+    [MathWalletAPI sendReq:openURLReq response:^(MathWalletResp *resq) {
+        NSLog(@"%@",resq.data);
+    }];
 }
 -(void)eosforce_login{
     MathWalletLoginReq *loginReq = [[MathWalletLoginReq alloc] init];
@@ -278,7 +296,9 @@
     loginReq.loginMemo = @"Memo";
     
     
-    [MathWalletAPI sendReq:loginReq];
+    [MathWalletAPI sendReq:loginReq response:^(MathWalletResp *resq) {
+        NSLog(@"%@",resq.data);
+    }];
 }
 -(void)eosforce_transfer{
     MathWalletTransferReq *transferReq = [[MathWalletTransferReq alloc] init];
@@ -298,7 +318,9 @@
     
     transferReq.desc = @"这是展示在钱包中的描述";
     transferReq.expired = [NSNumber numberWithLong:[NSDate date].timeIntervalSince1970+60];
-    [MathWalletAPI sendReq:transferReq];
+    [MathWalletAPI sendReq:transferReq response:^(MathWalletResp *resq) {
+        NSLog(@"%@",resq.data);
+    }];
 }
 -(void)eosforce_custom_transaction{
     MathWalletTransactionReq *transactionReq = [[MathWalletTransactionReq alloc] init];
@@ -319,7 +341,9 @@
     
     transactionReq.desc = @"这是展示在钱包中的描述";
     transactionReq.expired = [NSNumber numberWithLong:[NSDate date].timeIntervalSince1970+60];
-    [MathWalletAPI sendReq:transactionReq];
+    [MathWalletAPI sendReq:transactionReq response:^(MathWalletResp *resq) {
+        NSLog(@"%@",resq.data);
+    }];
 }
 #pragma mark -  TRON
 -(void)tron_openURL{
@@ -332,7 +356,9 @@
     // 转账信息
     openURLReq.dappUrl = @"http://www.mathwallet.org/cn/";
     openURLReq.desc = @"这是展示在钱包中的描述";
-    [MathWalletAPI sendReq:openURLReq];
+    [MathWalletAPI sendReq:openURLReq response:^(MathWalletResp *resq) {
+        NSLog(@"%@",resq.data);
+    }];
 }
 -(void)tron_login{
     MathWalletLoginReq *loginReq = [[MathWalletLoginReq alloc] init];
@@ -348,7 +374,9 @@
     loginReq.loginMemo = @"Memo";
     
     
-    [MathWalletAPI sendReq:loginReq];
+    [MathWalletAPI sendReq:loginReq response:^(MathWalletResp *resq) {
+        NSLog(@"%@",resq.data);
+    }];
 }
 -(void)tron_custom_transaction{
     MathWalletTransactionReq *transactionReq = [[MathWalletTransactionReq alloc] init];
@@ -358,35 +386,53 @@
     transactionReq.dappIcon = @"http://www.mathwallet.org/images/download/wallet_cn.png";
     transactionReq.dappName = @"MathWalletSDK-Demos";
     // 转账信息
-    transactionReq.from = @"";
-    /*
+    transactionReq.from = @"TAyzPC7CGD49f3zYzeaTXgfKJENwcfBxTL";
+
     transactionReq.contract = @[@{
                                     @"parameter": @{
                                         @"value": @{
-                                            @"data": @"7365870b0000000000000000000000000000000000000000000000000000000000000060",
+                                            @"data": @"de978e0d0000000000000000000000000000000000000000000000000000000000000057000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000600000000000000000000000000000000000000000000000000000000000000000",
                                             @"owner_address": @"TAyzPC7CGD49f3zYzeaTXgfKJENwcfBxTL",
-                                            @"contract_address": @"TLPs73VZBWgB2LcVXjH1ywRuVcLZK4bLjP",
-                                            @"call_value": @(10000000)
+                                            @"contract_address": @"TEEhQt3UsbARyWofJsgT3FuZ9cwbyADB16",
+                                            @"call_value": @(20000000)
                                         },
                                         @"type_url": @"type.googleapis.com/protocol.TriggerSmartContract"
                                     },
                                     @"type": @"TriggerSmartContract"
                                 }];
-     */
-    transactionReq.contract = @[@{
-                                    @"parameter": @{
-                                            @"value": @{
-                                                    @"amount": @(1),
-                                                    @"owner_address": @"TAyzPC7CGD49f3zYzeaTXgfKJENwcfBxTL",
-                                                    @"to_address": @"TLPs73VZBWgB2LcVXjH1ywRuVcLZK4bLjP"
-                                                    },
-                                            @"type_url": @"type.googleapis.com/protocol.TransferContract"
-                                            },
-                                    @"type": @"TransferContract"
-                                    }];
+//    transactionReq.contract = @[@{
+//                                    @"parameter": @{
+//                                            @"value": @{
+//                                                    @"amount": @(1),
+//                                                    @"owner_address": @"TAyzPC7CGD49f3zYzeaTXgfKJENwcfBxTL",
+//                                                    @"to_address": @"TLPs73VZBWgB2LcVXjH1ywRuVcLZK4bLjP"
+//                                                    },
+//                                            @"type_url": @"type.googleapis.com/protocol.TransferContract"
+//                                            },
+//                                    @"type": @"TransferContract"
+//                                    }];
     
     transactionReq.desc = @"这是展示在钱包中的描述";
     transactionReq.expired = [NSNumber numberWithLong:[NSDate date].timeIntervalSince1970+60];
-    [MathWalletAPI sendReq:transactionReq];
+    [MathWalletAPI sendReq:transactionReq response:^(MathWalletResp *resq) {
+        NSLog(@"%@",resq.data);
+    }];
+}
+
+-(void)tron_signMessage{
+    MathWalletSignMessageReq *signMessageReq = [[MathWalletSignMessageReq alloc] init];
+    // 公链标识
+    signMessageReq.blockchain = @"tron";
+    // DApp信息
+    signMessageReq.dappIcon = @"http://www.mathwallet.org/images/download/wallet_cn.png";
+    signMessageReq.dappName = @"MathWalletSDK-Demos";
+    // 签名信息
+    signMessageReq.message = @"ce8004f6ac090c";
+    signMessageReq.isHash = @(NO);
+    signMessageReq.desc = @"这是展示在钱包中的描述";
+    
+    [MathWalletAPI sendReq:signMessageReq response:^(MathWalletResp *resq) {
+        NSLog(@"%@",resq.data);
+    }];
 }
 @end

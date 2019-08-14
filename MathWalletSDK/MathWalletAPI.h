@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "MathWalletReq.h"
 #import "MathWalletResp.h"
+
+
+typedef void (^ResponseBlock)(MathWalletResp *resq);
+
 /*!
  * @class MathWalletAPI
  */
@@ -23,14 +27,15 @@
 /*!
  * @brief 向 MathWallet 发起请求
  * @param req 登录/转账
+ * @param responseBlock block回调
  * @return YES/NO
  */
-+ (BOOL)sendReq:(MathWalletReq *)req;
++ (BOOL)sendReq:(MathWalletReq *)req response:(ResponseBlock)responseBlock;
 
 /*!
  * @brief   处理MathWallet的回调
  * @discuss 在AppDelegate -(application:openURL:options:)方法里调用
  */
-+ (BOOL)handleURL:(NSURL *)url result:(void(^)(MathWalletResp *resq))result;
++ (BOOL)handleURL:(NSURL *)url;
 
 @end

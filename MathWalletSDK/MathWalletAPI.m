@@ -9,11 +9,13 @@
 #import "MathWalletAPI.h"
 #import <UIKit/UIKit.h>
 
+
 static const NSString *kParamKey  = @"param";
 static const NSString *kCallbackKey  = @"callback";
 static const NSString *kQuerySDK  = @"mathwalletsdk";
 
 static NSString *app_url_schemes;
+static NSMutableDictionary *callbacks;
 
 @implementation MathWalletAPI
 /*!
@@ -22,18 +24,22 @@ static NSString *app_url_schemes;
  */
 + (void)registerAppURLSchemes:(NSString *)urlSchemes{
     app_url_schemes = urlSchemes;
+    callbacks = [NSMutableDictionary new];
 }
 /*!
  * @brief 向 MathWallet 发起请求
  * @param req 登录/转账
+ * @param responseBlock block回调
  * @return YES/NO
  */
-+ (BOOL)sendReq:(MathWalletReq *)req{
++ (BOOL)sendReq:(MathWalletReq *)req response:(ResponseBlock)responseBlock{
     if (app_url_schemes) {
         // Append callback
         NSMutableDictionary *params = req.toParams.mutableCopy;
         [params setObject:[NSString stringWithFormat:@"%@://%@?action=%@",app_url_schemes,kQuerySDK,req.action] forKey:kCallbackKey];
-        
+        if(responseBlock){
+            [callbacks setObject:responseBlock forKey:app_url_schemes];
+        }
         // To string
         NSString *paramsString = [MathWalletAPI toJSONString:params];
         if (!paramsString) {
@@ -41,6 +47,7 @@ static NSString *app_url_schemes;
         }
         // Send
         NSString *urlString = [NSString stringWithFormat:@"mathwallet://mathwallet.org?param=%@",paramsString];
+        NSLog(@"%@",urlString);
         urlString = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
         
         return [MathWalletAPI openURL:[NSURL URLWithString:urlString]];
@@ -51,11 +58,14 @@ static NSString *app_url_schemes;
  * @brief   处理MathWallet的回调
  * @discuss 在AppDelegate -(application:openURL:options:)方法里调用
  */
-+ (BOOL)handleURL:(NSURL *)url result:(void(^)(MathWalletResp *resq))result{
++ (BOOL)handleURL:(NSURL *)url{
     if ([url.scheme isEqualToString:app_url_schemes]) {
         MathWalletResp *resp = [MathWalletAPI respWithURL:url];
         if (resp) {
-            result(resp);
+            if([callbacks objectForKey:app_url_schemes]){
+                ResponseBlock responseBlock = [callbacks objectForKey:app_url_schemes];
+                responseBlock(resp);
+            }
             return YES;
         }
     }

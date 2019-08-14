@@ -30,9 +30,7 @@
 
 
 -(BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
-    BOOL handle = [MathWalletAPI handleURL:url result:^(MathWalletResp *resq) {
-        NSLog(@"%@",resq.data);
-    }];
+    BOOL handle = [MathWalletAPI handleURL:url];
     return handle;
 }
 
