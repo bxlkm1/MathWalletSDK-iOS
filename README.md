@@ -35,9 +35,7 @@
 
 
 -(BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
-    BOOL handle = [MathWalletAPI handleURL:url result:^(MathWalletResp *resq) {
-        NSLog(@"%@",resq.data);
-    }];
+    BOOL handle = [MathWalletAPI handleURL:url];
     return handle;
 }
 
@@ -59,7 +57,9 @@
   loginReq.expired = [NSNumber numberWithLong:([NSDate date].timeIntervalSince1970 + 60)];
   loginReq.loginMemo = @"Memo";
 
-  [MathWalletAPI sendReq:loginReq];
+  [MathWalletAPI sendReq:loginReq response:^(MathWalletResp *resq) {
+        NSLog(@"%@",resq.data);
+    }];
 ```
 
 ### 4、使用MathWallet进行转账操作
@@ -83,7 +83,9 @@
   transferReq.desc = @"这是展示在钱包中的描述";
   transferReq.expired = [NSNumber numberWithLong:([NSDate date].timeIntervalSince1970 + 60)];
   
-  [MathWalletAPI sendReq:transferReq];
+  [MathWalletAPI sendReq:transferReq response:^(MathWalletResp *resq) {
+        NSLog(@"%@",resq.data);
+    }];
 ```
  ### 5、使用MathWallet进行自定义交易操作（执行合约）
 
@@ -106,7 +108,9 @@
 
   transactionReq.desc = @"这是展示在钱包中的描述";
   transactionReq.expired = [NSNumber numberWithLong:[NSDate date].timeIntervalSince1970];
-  [MathWalletAPI sendReq:transactionReq];
+  [MathWalletAPI sendReq:transactionReq response:^(MathWalletResp *resq) {
+        NSLog(@"%@",resq.data);
+    }];
 ```
  ### 6、使用MathWallet 签名消息
 
@@ -123,7 +127,9 @@
     signMessageReq.isHex = @(NO);
     signMessageReq.desc = @"这是展示在钱包中的描述";
     
-    [MathWalletAPI sendReq:signMessageReq];
+    [MathWalletAPI sendReq:signMessageReq response:^(MathWalletResp *resq) {
+        NSLog(@"%@",resq.data);
+    }];
 ```
  ### 7、使用MathWallet 打开DApp
 
@@ -137,5 +143,7 @@
     // 转账信息
     openURLReq.dappUrl = @"http://www.redpacketeos.com";
     openURLReq.desc = @"这是展示在钱包中的描述";
-    [MathWalletAPI sendReq:openURLReq];
+    [MathWalletAPI sendReq:openURLReq response:^(MathWalletResp *resq) {
+        NSLog(@"%@",resq.data);
+    }];
 ```
