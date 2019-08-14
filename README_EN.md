@@ -19,9 +19,7 @@
  return YES;
 }
 -(BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
- BOOL handle = [MathWalletAPI handleURL:url result:^(MathWalletResp *resq) {
- NSLog(@"%@",resq.data);
- }];
+ BOOL handle = [MathWalletAPI handleURL:url];
  return handle;
 }
 @end
@@ -39,7 +37,9 @@
  loginReq.loginUrl = @"login callback";
  loginReq.expired = [NSNumber numberWithLong:([NSDate date].timeIntervalSince1970 + 60)];
  loginReq.loginMemo = @"Memo";
-[MathWalletAPI sendReq:loginReq];
+[MathWalletAPI sendReq:loginReq response:^(MathWalletResp *resq) {
+        NSLog(@"%@",resq.data);
+    }];
 ```
 ### 4、Transfer on MathWallet
 ```Objective C
@@ -60,5 +60,7 @@
 transferReq.desc = @"describtions showed on Math Wallet";
  transferReq.expired = [NSNumber numberWithLong:([NSDate date].timeIntervalSince1970 + 60)];
  
- [MathWalletAPI sendReq:transferReq];
+ [MathWalletAPI sendReq:transferReq response:^(MathWalletResp *resq) {
+        NSLog(@"%@",resq.data);
+    }];
 ```
