@@ -12,10 +12,10 @@
 
 ### 1、配置URL Schemes
 #### Xcode工程info.plist-> URL types -> URL Schemes
-![URL Schemes](https://github.com/MediShares/MathWalletSDK-iOS/blob/master/urlschemes.jpeg "URL Schemes")
+![URL Schemes](https://github.com/MathWallet/MathWalletSDK-iOS/blob/master/urlschemes.jpeg "URL Schemes")
 
 #### iOS9以上需要在info.plist进行如下设置：
-![URL Schemes](https://github.com/MediShares/MathWalletSDK-iOS/blob/master/plist.jpeg "URL Schemes")
+![URL Schemes](https://github.com/MathWallet/MathWalletSDK-iOS/blob/master/plist.jpeg "URL Schemes")
 
 
 ### 2、注册URL Schemes和处理URL
