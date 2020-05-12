@@ -43,7 +43,7 @@ static NSMutableDictionary *callbacks;
         // To string
         NSString *paramsString = [MathWalletAPI toJSONString:params];
         if (!paramsString) {
-            return nil;
+            return NO;
         }
         // Send
         NSString *urlString = [NSString stringWithFormat:@"mathwallet://mathwallet.org?param=%@",paramsString];
@@ -88,8 +88,8 @@ static NSMutableDictionary *callbacks;
  * @brief obj->JSON String
  */
 +(NSString *)toJSONString:(id)obj {
-    NSError *error;
-    NSData *data = [NSJSONSerialization dataWithJSONObject:obj options:0 error:&error];
+    NSError *error = nil;
+    NSData *data = [NSJSONSerialization dataWithJSONObject:obj options:kNilOptions error:&error];
     if (!error){
         return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     }
